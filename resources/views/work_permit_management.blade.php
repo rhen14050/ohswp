@@ -131,7 +131,7 @@
                                             </table>
                                         </div>
                                     </div>
-
+{{-- chan tanga --}}
                                     <div class="tab-pane fade" id="allWorkPermitId" role="tabpanel"
                                     aria-labelledby="allWorkPermit-tab">
                                     <div class="text-right mt-4">
