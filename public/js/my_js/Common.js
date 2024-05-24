@@ -76,3 +76,15 @@ function resetFormValuesProductClassification(){
 $("#modalAddProductClassification").on('hidden.bs.modal', function(){
     resetFormValuesProductClassification();
 });
+
+
+function workPermitTabValidation(username){
+    console.log('qwe');
+    if(username == 'melrobl' || 'mrronquez'){
+        $('#allWorkPermit-tab').removeClass('d-none');
+    }
+    else{
+        $('#allWorkPermit-tab').addClass('d-none');
+
+    }
+}

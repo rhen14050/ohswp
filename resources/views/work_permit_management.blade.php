@@ -2,6 +2,7 @@
 
 @auth
     @php
+
     if (Auth::user()->user_level_id == 1) {
         $layout = 'layouts.super_user_layout';
     } elseif (Auth::user()->user_level_id == 2) {
@@ -9,6 +10,10 @@
     } elseif (Auth::user()->user_level_id == 3) {
         $layout = 'layouts.user_layout';
     }
+
+    // print_r(Auth::user());
+
+
     @endphp
 @endauth
 
@@ -40,6 +45,7 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active">Work Permit Management</li>
+                            {{-- <input type="text" value= {{ $rapidx_user_id }}> --}}
                         </ol>
                     </div>
                 </div>
@@ -64,13 +70,11 @@
                                             href="#work-management" role="tab" aria-controls="work-management"
                                             aria-selected="true">Work Permit Management Tab</a>
                                     </li>
-
                                     <li class="nav-item">
                                         <a class="nav-link" id="allWorkPermit-tab" data-toggle="tab"
                                             href="#allWorkPermitId" role="tab" aria-controls="allWorkPermitId"
-                                            aria-selected="true">See All Work Permit</a>
+                                            aria-selected="true">All Work Permit</a>
                                     </li>
-
                                     {{-- <li class="nav-item">
                                         <a class="nav-link" id="archive-tab" data-toggle="tab" href="#archive" role="tab" aria-controls="archive" aria-selected="false">Archive Tab</a>
                                     </li> --}}
@@ -132,37 +136,33 @@
                                         </div>
                                     </div>
 {{-- chan tanga --}}
-                                    <div class="tab-pane fade" id="allWorkPermitId" role="tabpanel"
-                                    aria-labelledby="allWorkPermit-tab">
-                                    <div class="text-right mt-4">
-                                        {{-- <button class="btn btn-primary" data-toggle="modal"
-                                            data-target="#modalAddFlowChart" id="btnAddFlowChartModal"
-                                            style="float: right;"><i class="fa fa-plus fa-md"></i> Add
-                                            Flow Chart</button> --}}
-                                    </div><br> <br>
 
-                                    <div class="table-responsive">
-                                        <table id="seeAllWorkPermitDataTables"
-                                            class="table table-sm table-bordered table-striped table-hover text-center"
-                                            style="width: 100%;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width: 5%">Status</th>
-                                                    <th style="width: 10%">Permit Number</th>
-                                                    <th style="width: 15%">Contractor</th>
-                                                    <th style="width: 20%">Activity</th>
-                                                    <th style="width: 7%">Start Date</th>
-                                                    <th style="width: 7%">End Date</th>
-                                                    <th style="width: 5%">Attach File</th>
-                                                    <th style="width: 10%">Person In-Charge</th>
-                                                    <th style="width: 5%">Permit Approval</th>
-                                                    <th style="width: 5%">Permit Clearance</th>
-                                                    <th style="width: 10%">Action</th>
-                                                </tr>
-                                            </thead>
-                                        </table>
+                                    <div class="tab-pane fade" id="allWorkPermitId" role="tabpanel"
+                                            aria-labelledby="allWorkPermit-tab">
+                                        <div class="text-right mt-4"></div><br> <br>
+
+                                        <div class="table-responsive">
+                                            <table id="seeAllWorkPermitDataTables"
+                                                class="table table-sm table-bordered table-striped table-hover text-center"
+                                                style="width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 5%">Status</th>
+                                                        <th style="width: 10%">Permit Number</th>
+                                                        <th style="width: 15%">Contractor</th>
+                                                        <th style="width: 20%">Activity</th>
+                                                        <th style="width: 7%">Start Date</th>
+                                                        <th style="width: 7%">End Date</th>
+                                                        <th style="width: 5%">Attach File</th>
+                                                        <th style="width: 10%">Person In-Charge</th>
+                                                        <th style="width: 5%">Permit Approval</th>
+                                                        <th style="width: 5%">Permit Clearance</th>
+                                                        <th style="width: 10%">Action</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
                                     </div>
-                                </div>
 
                                 </div>
                             </div>
@@ -346,6 +346,7 @@
                                                 <option value="ISS">ISS</option>
                                                 <option value="ESS">ESS</option>
                                                 <option value="HRD">HRD</option>
+                                                <option value="SEC">SEC</option>
                                                 <option value="FAC">FAC</option>
                                                 <option value="EMS">EMS</option>
                                                 <option value="LOG">LOG</option>
@@ -354,6 +355,7 @@
                                                 <option value="CN">CN</option>
                                                 <option value="PPS-TS">PPS-TS</option>
                                                 <option value="PPS-CN">PPS-CN</option>
+                                                <option value="FIN">FIN</option>
                                             </select>
                                         </div>
                                     </div>
@@ -1662,7 +1664,7 @@
                             <input type="hidden" class="counterclass" name="ohs_requirements_counter" id="ohsRequirementsCounterID">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <input type="checkbox" id="discussPmiEhsID" name="discuss_pmi_ehs" value="1"><label
+                                    <input type="checkbox" class="darren_bugok" id="discussPmiEhsID" name="discuss_pmi_ehs" value="1"><label
                                         for="discussPmiEhsID">&nbsp;&nbsp; 1. Discuss PMI EHS Policies and applicable health and
                                         safety programs.</label><br>
                                     <label class="form-control-label text-secondary" style="margin-left: 4%;">1.1 Observe proer
@@ -1674,63 +1676,63 @@
                                         strong odor. </label><br>
                                     <label class="form-control-label text-secondary" style="margin-left: 4%;">1.4 Seek EMS
                                         assessment first prior used of chemicals (if there's any).</label><br>
-                                    <input type="checkbox" id="discussApprovedOhsID" name="discuss_approved_ohs" value="1"><label
+                                    <input type="checkbox" class="darren_bugok" id="discussApprovedOhsID" name="discuss_approved_ohs" value="1"><label
                                         for="discussApprovedOHSId">&nbsp;&nbsp; 2. Discuss approved OHS Work Permit to all
                                         listed workers for the project before start of work; Secure copy of approved OHS Work
                                         Permit in the area;</label><br>
-                                    <input type="checkbox" id="bringAndWearId" name="bring_and_wear" value="1"><label for="">&nbsp;&nbsp; 3.
+                                    <input type="checkbox" class="darren_bugok" id="bringAndWearId" name="bring_and_wear" value="1"><label for="">&nbsp;&nbsp; 3.
                                         Bring and wear basic Personal Protective Equipment (PPE), (1)Safety Shoes (2) Hard Hat
                                         (3) Goggles/Eye Protection Device (4) Reflective Safety Vest. </label><br>
-                                    <input type="checkbox" id="certifiedSkilledWorkersId" name="certified_skilled_workers" value="1"><label for="">&nbsp;&nbsp; 4.
+                                    <input type="checkbox" class="darren_bugok" id="certifiedSkilledWorkersId" name="certified_skilled_workers" value="1"><label for="">&nbsp;&nbsp; 4.
                                         Certified skilled workers are required to work only- Welder,Technician,Crane/Forklift
                                         Operator,Rigger,etc.;Submit Certificate to PMI. </label><br>
-                                    <input type="checkbox" id="fullBodyHarnessId" name="full_body_harness" value="1"><label for="">&nbsp;&nbsp; 5.
+                                    <input type="checkbox" class="darren_bugok" id="fullBodyHarnessId" name="full_body_harness" value="1"><label for="">&nbsp;&nbsp; 5.
                                         Full body harness must be worn at all times; Fall arrester/protection must be anchored
                                         on a sturdy location; Safety/support lifelines installed.</label><br>
-                                    <input type="checkbox" id="scaffoldStrenghtId" name="scaffold_strenght" value="1"><label for="">&nbsp;&nbsp; 6.
+                                    <input type="checkbox" class="darren_bugok" id="scaffoldStrenghtId" name="scaffold_strenght" value="1"><label for="">&nbsp;&nbsp; 6.
                                         Scaffold strength is 4 times anticipated load. Guard railing installed. Platform is
                                         level; Wheeled type of scaffolds have wheel locking mechanism.</label><br>
-                                    <input type="checkbox" id="scaffoldStabilityId" name="scafold_stability" value="1"><label for="">&nbsp;&nbsp; 7.
+                                    <input type="checkbox" class="darren_bugok" id="scaffoldStabilityId" name="scafold_stability" value="1"><label for="">&nbsp;&nbsp; 7.
                                         Scaffold stability ensured and checked. Bracing and support adequate; Ensure firmness
                                         and rigidity of bracing, planks and rolling tower.</label><br>
-                                    <input type="checkbox" id="strictlyNoPassageId" name="strictly_no_passage" value="1"><label for="">&nbsp;&nbsp; 8.
+                                    <input type="checkbox" class="darren_bugok" id="strictlyNoPassageId" name="strictly_no_passage" value="1"><label for="">&nbsp;&nbsp; 8.
                                         Strictly no passage of workers/people underneath the scaffolding;</label><br>
-                                    <input type="checkbox" id="provideAppropriateBarricade" name="provide_appropriate_barricade" value="1"><label for="">&nbsp;&nbsp; 9.
+                                    <input type="checkbox" class="darren_bugok" id="provideAppropriateBarricade" name="provide_appropriate_barricade" value="1"><label for="">&nbsp;&nbsp; 9.
                                         Provide appropriate Barricade/enclosure of the area and post appropriate
                                         caution/signages; Do not obstruct emergency device.</label><br>
-                                    <input type="checkbox" id="provideAppropriateSafetyNet" name="provide_appropriate_safety_net" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="provideAppropriateSafetyNet" name="provide_appropriate_safety_net" value="1"><label for="">&nbsp;&nbsp;
                                         10. Provide appropriate Safety net if working overhead. </label><br>
-                                    <input type="checkbox" id="insulatedPpeId" name="insulated_ppe" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="insulatedPpeId" name="insulated_ppe" value="1"><label for="">&nbsp;&nbsp;
                                         11. Insulated PPE must worn at all times. Tools must be insulated; Ensure proper
                                         grounding for electrical works; Implement Lock Out/Tag Out. </label><br>
-                                    <input type="checkbox" id="noLiftingActivity" name="no_lifting_activity" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="noLiftingActivity" name="no_lifting_activity" value="1"><label for="">&nbsp;&nbsp;
                                         12. No lifting activity of heavy loads if raining or during high/strong winds when
                                         working outside. </label><br>
-                                    <input type="checkbox" id="strictlyToolsId" name="strictly_tools" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="strictlyToolsId" name="strictly_tools" value="1"><label for="">&nbsp;&nbsp;
                                         13. Strictly tools and equipmentto be brought inside and used must in good functioning
                                         condition. Have permits for Generator Sets and Cranes. </label><br>
-                                    <input type="checkbox" id="fireExtinguisherId" name="fire_extinguisher" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="fireExtinguisherId" name="fire_extinguisher" value="1"><label for="">&nbsp;&nbsp;
                                         14. Fire extinguisher must be available in the area and operable; Workers know how to
                                         use the Fire Extinguishers.</label><br>
-                                    <input type="checkbox" id="strictlyNoFlammableId" name="stricty_no_flammable" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="strictlyNoFlammableId" name="stricty_no_flammable" value="1"><label for="">&nbsp;&nbsp;
                                         15. Strictly No flammable and combustible items in the project and surrounding area when
                                         hotworks is conducted; Area have good ventilation.</label><br>
-                                    <input type="checkbox" id="fireBlanketId" name="fire_blanket" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="fireBlanketId" name="fire_blanket" value="1"><label for="">&nbsp;&nbsp;
                                         16. Fire blanket/welding mat must be available; Firewatch must be present all the times.
                                         Heat/smoke detectors in the area are disabled and protected.</label><br>
-                                    <input type="checkbox" id="gasCylinderId" name="gas_cylinder" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="gasCylinderId" name="gas_cylinder" value="1"><label for="">&nbsp;&nbsp;
                                         17. Gas cylinders must be properly placed, stored in upwright position and with safety
                                         caps.</label><br>
-                                    <input type="checkbox" id="strictlyObservedBuddyId" name="strictly_observed_buddy" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="strictlyObservedBuddyId" name="strictly_observed_buddy" value="1"><label for="">&nbsp;&nbsp;
                                         18. Strictly observed buddy system during conduct of work; For Confine Space Work,
                                         please comply the AREA CONTROL CHECK ITEMS:</label><br>
-                                    <input type="checkbox" id="conductDailyId" name="conduct_daily" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="conductDailyId" name="conduct_daily" value="1"><label for="">&nbsp;&nbsp;
                                         19. Conduct daily/weekly tool box meeting; Safety In-Charge to conduct compliance
                                         inspection; Strictly NO Smoking inside PMI Premises.</label><br>
-                                    <input type="checkbox" id="practiceSafetyFirstId" name="practice_safety_first" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="practiceSafetyFirstId" name="practice_safety_first" value="1"><label for="">&nbsp;&nbsp;
                                         20. Practice safety first and Discipline; Observe proper behaviour at hallways and
                                         common areas; Maintain Good Housekeeping/5S always.</label><br>
-                                    <input type="checkbox" id="othersParticipateId" name="others_participate" value="1"><label for="">&nbsp;&nbsp;
+                                    <input type="checkbox" class="darren_bugok" id="othersParticipateId" name="others_participate" value="1"><label for="">&nbsp;&nbsp;
                                         21. Others :Participate in company wide safety program such as emergency
                                         drills.</label><br>
                                 </div>
@@ -1755,7 +1757,7 @@
         <script type="text/javascript">
             GetContractorID($(".selectContractorID"));
 
-
+            workPermitTabValidation($('#sessionUsername').val());
 
             //Initialize Select2 Elements
             // $('.selectAddProjectInCharge').select2({
@@ -2644,10 +2646,14 @@
 
             $('#btnSubmitContractorNeed').on('click', function(event){
                 event.preventDefault();
-                AddOhsRequirements();
+                if ($('input:checkbox').is(':checked')){
+                    AddOhsRequirements();
+                }else{
+                    alert('Magandang Umaga,\nKamusta/Kumusta ka na Kaibigan! \n\n            Mangyaring Suriin muna ang naaangkop para sa manggagawang pupunta sa Pricon Microelectronics, Inc \nat kapag napili na ang dapat pilian, mangyaring ipasa na \nito para magpatuloy ang pag-aapruba sa napiling \nSafety Officer in-charge nang iyong Work Permit. \n\n Nagmamahal,\nDah!</3');
+                    return false;
+                }
                 // $('#formViewWPRequest').serialize();
                 // console.log($('#formViewWPRequest').serialize());
-
             });
 
             $('#btnExportSummary').on('click', function(){

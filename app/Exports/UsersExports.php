@@ -1096,6 +1096,52 @@ class UsersExports implements  FromView, WithTitle, WithEvents, WithDrawings
 
             }
 
+            if ($this->workpermit_soic->status == 10 || $this->workpermit_soic->status == 11  || $this->workpermit_soic->status == 12 || $this->workpermit_soic->status == 13 || $this->workpermit_soic->status == 14){
+
+                $project_in_charge_sig = new Drawing();
+                $project_in_charge_sig->setPath(public_path( ("/storage/e-signature/". $this->e_signature['project_in_charge'] .".png")));
+                $project_in_charge_sig->setHeight(50);
+                $project_in_charge_sig->setCoordinates((string)$result_d1);
+                $project_in_charge_sig->setOffsetX(100);
+                $project_in_charge_sig->setOffsetY(10);
+
+                $safety_officer_in_charge_sig = new Drawing();
+                $safety_officer_in_charge_sig->setPath(public_path( ("/storage/e-signature/". $this->e_signature['safety_officer_in_charge_id'] .".png")));
+                $safety_officer_in_charge_sig->setHeight(50);
+                $safety_officer_in_charge_sig->setCoordinates((string)$result_h1);
+                $safety_officer_in_charge_sig->setOffsetX(100);
+                $safety_officer_in_charge_sig->setOffsetY(10);
+
+
+                $over_all_safety_officer_sig = new Drawing();
+                $over_all_safety_officer_sig->setPath(public_path( ("/storage/e-signature/". $this->e_signature['over_all_safety_officer_id'] .".png")));
+                $over_all_safety_officer_sig->setHeight(50);
+                $over_all_safety_officer_sig->setCoordinates((string)$result_m1);
+                $over_all_safety_officer_sig->setOffsetX(100);
+                $over_all_safety_officer_sig->setOffsetY(10);
+
+                $hrd_manager_sig = new Drawing();
+                $hrd_manager_sig->setPath(public_path( ("/storage/e-signature/". $this->e_signature['hrd_manager_id'] .".png")));
+                $hrd_manager_sig->setHeight(50);
+                $hrd_manager_sig->setCoordinates((string)$result_r1);
+                $hrd_manager_sig->setOffsetX(30);
+                $hrd_manager_sig->setOffsetY(10);
+
+                // $safety_officer_in_charge_sig2 = new Drawing();
+                // $safety_officer_in_charge_sig2->setPath(public_path( ("/storage/e-signature/". $this->e_signature['safety_officer_in_charge_id'] .".png")));
+                // $safety_officer_in_charge_sig2->setHeight(50);
+                // $safety_officer_in_charge_sig2->setCoordinates((string)$result_d2);
+                // $safety_officer_in_charge_sig2->setOffsetX(100);
+                // $safety_officer_in_charge_sig2->setOffsetY(10);
+                $contractor_pmi_soic = new Drawing();
+                $contractor_pmi_soic->setPath(public_path( ("/storage/e-signature/". $this->e_signature['safety_officer_in_charge_id'] .".png")));
+                $contractor_pmi_soic->setHeight(60);
+                $contractor_pmi_soic->setCoordinates((string)$result_2);
+                $contractor_pmi_soic->setOffsetX(90);
+                $contractor_pmi_soic->setOffsetY(10);
+
+            }
+
             if ($this->workpermit_soic->status == 11  || $this->workpermit_soic->status == 12 || $this->workpermit_soic->status == 13 || $this->workpermit_soic->status == 14){
 
                 $project_in_charge_sig = new Drawing();

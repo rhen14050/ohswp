@@ -41,7 +41,7 @@ src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1581152197/smartwizard/jqu
 <!-- Custom JS -->
 <script src="{{ asset('public/js/my_js/Contractor.js?n=2') }}"></script>
 <script src="{{ asset('public/js/my_js/WorkPermit.js?n=15') }}"></script>
-<script src="{{ asset('public/js/my_js/Common.js') }}"></script>
+<script src="{{ asset('public/js/my_js/Common.js?n=1') }}"></script>
 <script src="{{ asset('public/js/my_js/RapidXUser.js') }}"></script>
 <script src="{{ asset('public/js/my_js/EmailRecipient.js') }}"></script>
 <script src="{{ asset('public/js/my_js/ProductClassification.js') }}"></script>

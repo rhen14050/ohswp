@@ -1,6 +1,6 @@
-[2022-07-19 00:10:22] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:77)
+[2024-05-06 00:42:25] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:78)
 [stacktrace]
-#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(77): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 77, Array)
+#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(78): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 78, Array)
 #1 [internal function]: App\\Http\\Controllers\\WorkPermitController->view_work_permit(Object(Illuminate\\Http\\Request))
 #2 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
 #3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('view_work_permi...', Array)
@@ -54,13 +54,13 @@
 #51 /var/www/ohswp/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #52 {main}
 "} 
-[2022-07-19 08:10:26] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:1384)
+[2024-05-06 00:42:35] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:78)
 [stacktrace]
-#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(1384): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 1384, Array)
-#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->approved_work_permit(Object(Illuminate\\Http\\Request))
+#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(78): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 78, Array)
+#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->view_work_permit(Object(Illuminate\\Http\\Request))
 #2 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
-#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('approved_work_p...', Array)
-#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'approved_work_p...')
+#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('view_work_permi...', Array)
+#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'view_work_permi...')
 #5 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
 #6 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
 #7 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
@@ -110,13 +110,13 @@
 #51 /var/www/ohswp/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #52 {main}
 "} 
-[2022-07-19 08:10:34] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:1384)
+[2024-05-06 00:42:40] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:78)
 [stacktrace]
-#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(1384): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 1384, Array)
-#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->approved_work_permit(Object(Illuminate\\Http\\Request))
+#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(78): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 78, Array)
+#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->view_work_permit(Object(Illuminate\\Http\\Request))
 #2 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
-#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('approved_work_p...', Array)
-#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'approved_work_p...')
+#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('view_work_permi...', Array)
+#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'view_work_permi...')
 #5 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
 #6 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
 #7 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
@@ -166,13 +166,13 @@
 #51 /var/www/ohswp/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #52 {main}
 "} 
-[2022-07-19 08:10:49] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:1384)
+[2024-05-06 02:44:13] local.ERROR: Undefined index: rapidx_department_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_department_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:1591)
 [stacktrace]
-#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(1384): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 1384, Array)
-#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->approved_work_permit(Object(Illuminate\\Http\\Request))
+#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(1591): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 1591, Array)
+#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->get_rapidx_user_department(Object(Illuminate\\Http\\Request))
 #2 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
-#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('approved_work_p...', Array)
-#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'approved_work_p...')
+#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('get_rapidx_user...', Array)
+#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'get_rapidx_user...')
 #5 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
 #6 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
 #7 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
@@ -222,13 +222,13 @@
 #51 /var/www/ohswp/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #52 {main}
 "} 
-[2022-07-19 08:16:17] local.ERROR: Undefined variable: work_permit_detailss {"exception":"[object] (ErrorException(code: 0): Undefined variable: work_permit_detailss at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:2000)
+[2024-05-06 02:44:13] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:1583)
 [stacktrace]
-#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(2000): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/ohswp/...', 2000, Array)
-#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->extend_work_permit(Object(Illuminate\\Http\\Request))
+#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(1583): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 1583, Array)
+#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->get_rapidx_user(Object(Illuminate\\Http\\Request))
 #2 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
-#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('extend_work_per...', Array)
-#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'extend_work_per...')
+#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('get_rapidx_user', Array)
+#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'get_rapidx_user')
 #5 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
 #6 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
 #7 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
@@ -278,13 +278,13 @@
 #51 /var/www/ohswp/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #52 {main}
 "} 
-[2022-07-19 08:16:23] local.ERROR: Undefined variable: work_permit_detailss {"exception":"[object] (ErrorException(code: 0): Undefined variable: work_permit_detailss at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:2000)
+[2024-05-06 02:48:26] local.ERROR: Undefined index: rapidx_user_id {"exception":"[object] (ErrorException(code: 0): Undefined index: rapidx_user_id at /var/www/ohswp/app/Http/Controllers/WorkPermitController.php:78)
 [stacktrace]
-#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(2000): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', '/var/www/ohswp/...', 2000, Array)
-#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->extend_work_permit(Object(Illuminate\\Http\\Request))
+#0 /var/www/ohswp/app/Http/Controllers/WorkPermitController.php(78): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', '/var/www/ohswp/...', 78, Array)
+#1 [internal function]: App\\Http\\Controllers\\WorkPermitController->view_work_permit(Object(Illuminate\\Http\\Request))
 #2 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
-#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('extend_work_per...', Array)
-#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'extend_work_per...')
+#3 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('view_work_permi...', Array)
+#4 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\WorkPermitController), 'view_work_permi...')
 #5 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Route.php(176): Illuminate\\Routing\\Route->runController()
 #6 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Router.php(680): Illuminate\\Routing\\Route->run()
 #7 /var/www/ohswp/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))

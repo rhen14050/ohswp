@@ -30,7 +30,8 @@ return [
     */
 
     // 'host' => env('MAIL_HOST', 'smtp.googlemail.com'),
-    'host' => env('MAIL_HOST', '192.168.3.254'),
+    // 'host' => env('MAIL_HOST', '192.168.3.254'),
+    'host' => env('MAIL_HOST', 'mail3.pricon.ph'), // After Email Migration
 
 
     /*
@@ -45,7 +46,7 @@ return [
     */
 
     // 'port' => env('MAIL_PORT', 465),
-    'port' => env('MAIL_PORT', 25),
+    'port' => env('MAIL_PORT', 465), // After Email Migration
 
     /*
     |--------------------------------------------------------------------------
@@ -59,7 +60,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'OHSWorkPermit@pricon.ph'),
+        'address' => env('MAIL_FROM_ADDRESS', 'issinfoservice@pricon.ph'), // After Email Migration
         'name' => env('MAIL_FROM_NAME', 'OHS Work Permit'),
     ],
 
@@ -75,7 +76,8 @@ return [
     */
 
     // 'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
-    'encryption' => env('MAIL_ENCRYPTION', 'null'),
+    // 'encryption' => env('MAIL_ENCRYPTION', 'null'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'), // After Email Migration
 
 
     /*

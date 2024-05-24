@@ -26,9 +26,8 @@ class InvExcelController extends Controller
 {
     //
 
-    public function export(Request $request, $id)
+    public function export(Request $request, $counter)
     {
-
 
     // $work_permit = WorkPermitInformation::where('id',$id)->first();
     $workpermit_soic = WorkPermitInformation:: with([
@@ -37,16 +36,18 @@ class InvExcelController extends Controller
         'contractor_details',
         'approver_in_charge'
         ])
-        ->where('id',$id)
+        ->where('counter',$counter)
         ->first();
 
-    $ohs_requirements = OhsRequirements::where('id',$id)->first();
-    $worker = Worker::where('counter',$id)->get();
-    $tools = Tools::where('counter',$id)->get();
+    $ohs_requirements = OhsRequirements::where('counter',$counter)->first();
+    $worker = Worker::where('counter',$counter)->get();
+    $tools = Tools::where('counter',$counter)->get();
 
     $user_approver = ApproverEmailRecipient::with(['project_in_charge_details','safety_officer_in_charge','over_all_safety_officer','hrd_manager','ems_manager'])
-    ->where('id', $id)
+    ->where('counter', $counter)
     ->get();
+
+    // return $user_approver;
     // $user_approver = ApproverEmailRecipient::all();
 
 
@@ -69,6 +70,7 @@ class InvExcelController extends Controller
     $work_permit_per_dept_cn = WorkPermitInformation::where('division', 'CN')->get();
     $work_permit_per_dept_pps_ts = WorkPermitInformation::where('division', 'PPS-TS')->get();
     $work_permit_per_dept_pps_cn = WorkPermitInformation::where('division', 'PPS-CN')->get();
+    $work_permit_per_dept_fin = WorkPermitInformation::where('division', 'FIN')->get();
 
     $permit =  $workpermit_soic->permit_number;
 

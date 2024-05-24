@@ -52,6 +52,10 @@ class ExportSummaryReportController extends Controller
     $work_permit_per_dept_pps_cn = WorkPermitInformation::where('division', 'PPS-CN')
     ->where('created_at', 'LIKE','%'.$year_month.'%')
     ->get();
+    $work_permit_per_dept_fin = WorkPermitInformation::where('division', 'FIN')
+    ->where('created_at', 'LIKE','%'.$year_month.'%')
+    ->get();
+
 
     // return $work_permit_per_dept_iss;
 
@@ -72,6 +76,7 @@ class ExportSummaryReportController extends Controller
             $work_permit_per_dept_cn,
             $work_permit_per_dept_pps_ts,
             $work_permit_per_dept_pps_cn,
+            $work_permit_per_dept_fin,
             $selected_month,
 
     ), 'Summary - '.$date.'.xlsx');

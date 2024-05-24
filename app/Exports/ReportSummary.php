@@ -40,6 +40,7 @@ class ReportSummary implements FromView, WithTitle, WithEvents
     protected $work_permit_per_dept_cn;
     protected $work_permit_per_dept_pps_ts;
     protected $work_permit_per_dept_pps_cn;
+    protected $work_permit_per_dept_fin;
     protected $selected_month;
 
 
@@ -57,6 +58,7 @@ class ReportSummary implements FromView, WithTitle, WithEvents
     $work_permit_per_dept_cn,
     $work_permit_per_dept_pps_ts,
     $work_permit_per_dept_pps_cn,
+    $work_permit_per_dept_fin,
     $selected_month
     )
 
@@ -73,6 +75,7 @@ class ReportSummary implements FromView, WithTitle, WithEvents
         $this->work_permit_per_dept_cn = $work_permit_per_dept_cn;
         $this->work_permit_per_dept_pps_ts = $work_permit_per_dept_pps_ts;
         $this->work_permit_per_dept_pps_cn = $work_permit_per_dept_pps_cn;
+        $this->work_permit_per_dept_fin = $work_permit_per_dept_fin;
         $this->selected_month = $selected_month;
 
 
@@ -107,6 +110,7 @@ class ReportSummary implements FromView, WithTitle, WithEvents
         $work_permit_cn = $this->work_permit_per_dept_cn;
         $work_permit_pps_ts = $this->work_permit_per_dept_pps_ts;
         $work_permit_pps_cn = $this->work_permit_per_dept_pps_cn;
+        $work_permit_fin = $this->work_permit_per_dept_fin;
         $selected_month_export = $this->selected_month;
 
         $arial_font_12 = array(
@@ -174,6 +178,7 @@ class ReportSummary implements FromView, WithTitle, WithEvents
                 $work_permit_cn,
                 $work_permit_pps_ts,
                 $work_permit_pps_cn,
+                $work_permit_fin,
                 $selected_month_export
             )  {
 
@@ -286,11 +291,19 @@ class ReportSummary implements FromView, WithTitle, WithEvents
                 $event->sheet->getDelegate()->getStyle('B13')->applyFromArray($hv_center);
                 $event->sheet->getDelegate()->getStyle('B13')->applyFromArray($arial_font_12);
 
-                $event->sheet->setCellValue('A14',"Total");
+                $event->sheet->setCellValue('A14',"FIN");
                 $event->sheet->getDelegate()->mergeCells('B14:E14');
                 $event->sheet->getDelegate()->getStyle('A14')->applyFromArray($hv_center);
                 $event->sheet->getDelegate()->getStyle('A14')->applyFromArray($arial_font_12);
-                $event->sheet->setCellValue('B14',
+                $event->sheet->setCellValue('B14',count($work_permit_fin));
+                $event->sheet->getDelegate()->getStyle('B14')->applyFromArray($hv_center);
+                $event->sheet->getDelegate()->getStyle('B14')->applyFromArray($arial_font_12);
+
+                $event->sheet->setCellValue('A15',"Total");
+                $event->sheet->getDelegate()->mergeCells('B15:E15');
+                $event->sheet->getDelegate()->getStyle('A15')->applyFromArray($hv_center);
+                $event->sheet->getDelegate()->getStyle('A15')->applyFromArray($arial_font_12);
+                $event->sheet->setCellValue('B15',
                 count($work_permit_iss)
                 +count($work_permit_ess)
                 +count($work_permit_hrd)
@@ -302,12 +315,13 @@ class ReportSummary implements FromView, WithTitle, WithEvents
                 +count($work_permit_cn)
                 +count($work_permit_pps_ts)
                 +count($work_permit_pps_cn)
+                +count($work_permit_fin)
                 );
-                $event->sheet->getDelegate()->getStyle('B14')->applyFromArray($hv_center);
-                $event->sheet->getDelegate()->getStyle('B14')->applyFromArray($arial_font_12);
+                $event->sheet->getDelegate()->getStyle('B15')->applyFromArray($hv_center);
+                $event->sheet->getDelegate()->getStyle('B15')->applyFromArray($arial_font_12);
 
             $event->sheet->getDelegate()->getStyle('A1:E2')->applyFromArray($styleBorderAll);
-            $event->sheet->getDelegate()->getStyle('A3:E14')->applyFromArray($styleBorderAll);
+            $event->sheet->getDelegate()->getStyle('A3:E15')->applyFromArray($styleBorderAll);
             //  $event->sheet->getDelegate()->getColumnDimension('C')->setVisible(false);
             //  $event->sheet->getDelegate()->getRowDimension('5')->setVisible(false);
 

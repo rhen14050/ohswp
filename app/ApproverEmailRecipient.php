@@ -43,7 +43,7 @@ class ApproverEmailRecipient extends Model
 
     public function work_permit_details()
     {
-    	return $this->hasOne(WorkPermitInformation::class, 'id', 'counter');
+    	return $this->hasOne(WorkPermitInformation::class, 'counter', 'counter');
     }
 
 

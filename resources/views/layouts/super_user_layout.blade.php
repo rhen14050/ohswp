@@ -5,6 +5,10 @@ if (isset($_SESSION['rapidx_user_id'])) {
     $isLogin = true;
 }
 
+// print_r ($_SESSION);
+
+// echo $_SESSION['rapidx_username'];
+
 $isAuthorized = false;
 $user_level = 0;
 @endphp
@@ -90,6 +94,7 @@ $user_level = 0;
 </head>
 
 <body class="hold-transition sidebar-mini">
+    <input type="hidden" id="sessionUsername" value="{{ $_SESSION['rapidx_username'] }}">
     <div class="modal" tabindex="-1" role="dialog" id="modalOnGoing">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
