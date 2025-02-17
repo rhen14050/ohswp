@@ -350,12 +350,14 @@
                                                 <option value="FAC">FAC</option>
                                                 <option value="EMS">EMS</option>
                                                 <option value="LOG">LOG</option>
-                                                <option value="TS">TS</option>
+                                                <option value="TS-F1">TS-F1</option>
                                                 <option value="YF">YF</option>
                                                 <option value="CN">CN</option>
                                                 <option value="PPS-TS">PPS-TS</option>
                                                 <option value="PPS-CN">PPS-CN</option>
                                                 <option value="FIN">FIN</option>
+                                                <option value="BC">Battery Connector</option>
+                                                <option value="TS-F3">TS-F3</option>
                                             </select>
                                         </div>
                                     </div>
@@ -1630,7 +1632,7 @@
                                         <div class="col">
                                             <div class="input-group input-group-sm mb-3">
                                                 <div class="input-group-prepend w-50">
-                                                    <span class="input-group-text w-100" id="basic-addon1">HRD Manager</span>
+                                                    <span class="input-group-text w-100" id="basic-addon1">HR / Administration</span>
                                                 </div>
                                                 <input type="text" class="form-control" name="hrd_manager" id="txtHrdManager"
                                                     readonly>
@@ -1644,7 +1646,7 @@
                                         <div class="col">
                                             <div class="input-group input-group-sm mb-3">
                                                 <div class="input-group-prepend w-50">
-                                                    <span class="input-group-text w-100" id="basic-addon1">EMS Manager</span>
+                                                    <span class="input-group-text w-100" id="basic-addon1">Pollution Control Officer</span>
                                                 </div>
                                                 <input type="text" class="form-control" name="ems_manager" id="txtEmsManager"
                                                     readonly>
@@ -2575,7 +2577,7 @@
             // $("#modalEditContractorContact").modal('show');
             let workpermitID = $(this).attr('workpermit-id');
             $("#editWorkPermitId").val($(this).attr('workpermit-id'));
-            // console.log($("#workPermitId").val(workpermitID));
+            // console.log(workpermitID);
 
             // console.log(editWorkPermitId);
             // $('#workPermitId').val(result[0].department_name);
@@ -2649,7 +2651,7 @@
                 if ($('input:checkbox').is(':checked')){
                     AddOhsRequirements();
                 }else{
-                    alert('Magandang Umaga,\nKamusta/Kumusta ka na Kaibigan! \n\n            Mangyaring Suriin muna ang naaangkop para sa manggagawang pupunta sa Pricon Microelectronics, Inc \nat kapag napili na ang dapat pilian, mangyaring ipasa na \nito para magpatuloy ang pag-aapruba sa napiling \nSafety Officer in-charge nang iyong Work Permit. \n\n Nagmamahal,\nDah!</3');
+                    alert('Magandang buhay,\nKamusta/Kumusta ka na Kaibigan! \n\n            Mangyaring Suriin muna ang naaangkop para sa manggagawang pupunta sa Pricon Microelectronics, Inc \nat kapag napili na ang dapat pilian, mangyaring ipasa na \nito para magpatuloy ang pag-aapruba sa napiling \nSafety Officer in-charge nang iyong Work Permit. \n\n Nagmamahal,\nDah!</3');
                     return false;
                 }
                 // $('#formViewWPRequest').serialize();

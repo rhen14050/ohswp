@@ -868,7 +868,7 @@ public function view_work_permit(Request $request)
             $result .='<br>';
             if($approver->work_permit_details->status < 4){
 
-                $result .= '<button class="btn btn-secondary btn-sm text-center actionEditWorkPermit" workpermit-id="' . $approver->work_permit_details->counter . '" data-toggle="modal" data-target="#modalEditWorkPermit" data-keyboard="false"><i class="fas fa-edit"></i> Edit</button>';
+                $result .= '<button class="btn btn-secondary btn-sm text-center actionEditWorkPermit" workpermit-id="' . $approver->work_permit_details->id . '" data-toggle="modal" data-target="#modalEditWorkPermit" data-keyboard="false"><i class="fas fa-edit"></i> Edit</button>';
                 $result .='<br>';
                 $result .='<br>';
 
@@ -878,7 +878,7 @@ public function view_work_permit(Request $request)
                 // $result .='<br>';
                 // $result .='<br>';
             }else{
-                $result .= '<button class="btn btn-danger btn-sm text-center actionDeleteWorkPermit" workpermit-id="' . $approver->work_permit_details->counter . '" data-toggle="modal" data-target="#modalDeleteWorkPermit" data-keyboard="false"><i class="fa fa-trash"></i> Delete</button>';
+                $result .= '<button class="btn btn-danger btn-sm text-center actionDeleteWorkPermit" workpermit-id="' . $approver->work_permit_details->id . '" data-toggle="modal" data-target="#modalDeleteWorkPermit" data-keyboard="false"><i class="fa fa-trash"></i> Delete</button>';
                 $result .='<br>';
                 $result .='<br>';
             }
@@ -1435,12 +1435,15 @@ public function view_work_permit(Request $request)
                 'contractor_safety_officer_in_charge',
                 'contractor_id'
                 ])
-                ->where('counter', $request->work_permit_id)->get();
+                ->where('id', $request->work_permit_id)->get();
 
                 // return $workpermit;
+                $counter = $workpermit[0]->counter;
 
-                $worker = Worker::where('counter',$request->work_permit_id)->get();
-                $tools = Tools::where('counter', $request->work_permit_id)->get();
+                $worker = Worker::where('counter',$counter)->get();
+                // return $worker;
+
+                $tools = Tools::where('counter', $counter)->get();
 
 
                 // return count($tools);
@@ -1460,7 +1463,9 @@ public function view_work_permit(Request $request)
                     'ems_manager'
 
                 ])
-                ->where('counter',$request->work_permit_id)->get();
+                ->where('counter',$counter)->get();
+
+                // return $approver;
 
 
                 // ->where('id', 1)->get();
@@ -2134,6 +2139,8 @@ public function view_work_permit(Request $request)
 
             // return $data;
 
+            // return $request->work_permit_id;
+
 
 
             if($validator->fails()) {
@@ -2214,8 +2221,8 @@ public function view_work_permit(Request $request)
                     //     'logdel' => 0
 
                     //  ]);
+                    return response()->json(['result' => "1"]);
         }
-        return response()->json(['result' => "1"]);
     }
 
     //============================== DELETE WORK PERMIT ==============================
@@ -2264,6 +2271,8 @@ public function view_work_permit(Request $request)
 
         $data = $request->all(); // collect all input fields
 
+        // return $data;
+
         $work_permit_detailss = WorkPermitInformation::
             with(['approver_in_charge','contractor_id_name'])
             ->where('counter', $request->extend_work_permit_id)
@@ -2290,7 +2299,7 @@ public function view_work_permit(Request $request)
 
             });
 
-            WorkPermitInformation::where('id', $request->extend_work_permit_id)
+            WorkPermitInformation::where('counter', $request->extend_work_permit_id)
             ->update([ // The update method expects an array of column and value pairs representing the columns that should be updated.
                 'prolong_start_date' => $request->prolong_start_date,
                 'prolong_start_time' => $request->prolong_start_time,
@@ -2356,13 +2365,13 @@ public function view_work_permit(Request $request)
                 ->get();
 
 
-            if(isset($request->approved)){
-                $approver = collect($approver)->whereIn('work_permit_details.status',['8','14']);
-            }
+                if(isset($request->approved)){
+                    $approver = collect($approver)->whereIn('work_permit_details.status',['8','14']);
+                }
 
-            if(isset($request->forApproval)){
-                $approver = collect($approver)->whereIn('work_permit_details.status',['0','1','2','3','4','5','6','7']);
-            }
+                if(isset($request->forApproval)){
+                    $approver = collect($approver)->whereIn('work_permit_details.status',['0','1','2','3','4','5','6','7']);
+                }
 
             // if(isset($request->forMyApproval)){
             //     $approver = ApproverEmailRecipient::whereHas('work_permit_details', function($q) use ($rapidx_user_id){

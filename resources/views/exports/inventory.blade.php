@@ -1104,7 +1104,7 @@
         <td colspan="8" rowspan="2" style="word-break: break-word; text-align:center;">Project In-Charge <br>Signature Over Printed Name</td>
         <td colspan="4" rowspan="2" style="word-break: break-word; text-align:center;">Safety officer In-Charge<br>Signature Over Printed Name</td>
         <td colspan="5" rowspan="2" style="word-break: break-word; text-align:center;">Over-all Safety Officer<br>Signature Over Printed Name</td>
-        <td colspan="6" rowspan="2" style="word-break: break-word; text-align:center;">HRD Manager<br>Signature Over Printed Name</td>
+        <td colspan="6" rowspan="2" style="word-break: break-word; text-align:center;">HR / Administration<br>Signature Over Printed Name</td>
     </tr>
 
     <tr>
@@ -1203,9 +1203,9 @@
 
     <tr>
         <td colspan="8" rowspan="2" style="word-break: break-word; text-align:center;">Safety officer In-Charge <br>Signature Over Printed Name</td>
-        <td colspan="4" rowspan="2" style="word-break: break-word; text-align:center;">EMS Manager<br>Signature Over Printed Name</td>
+        <td colspan="4" rowspan="2" style="word-break: break-word; text-align:center;">Pollution Control Officer<br>Signature Over Printed Name</td>
         <td colspan="5" rowspan="2" style="word-break: break-word; text-align:center;">Over-all Safety Officer<br>Signature Over Printed Name</td>
-        <td colspan="6" rowspan="2" style="word-break: break-word; text-align:center;">HRD Manager<br>Signature Over Printed Name</td>
+        <td colspan="6" rowspan="2" style="word-break: break-word; text-align:center;">HR / Administration<br>Signature Over Printed Name</td>
     </tr>
 
 

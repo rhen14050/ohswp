@@ -235,12 +235,6 @@ function GetWorkPermitIdToEdit(workpermitID) {
 
         },
         success: function (response) {
-            // console.log(response['startDate']);
-            // console.log(response['endDate']);
-
-
-
-            // console.log(work_permit_id);
 
             let result = response['permit_number'];
             let permit_number = response['permit_number'];
@@ -317,40 +311,19 @@ function GetWorkPermitIdToEdit(workpermitID) {
                 $("#editWorkClassificationIDN").prop("checked",true);
             }
 
-
-
-
             var date_concut = response['startDate'] + '-' + response['endDate'];
             var start_oras = response['start_time'];
             var end_oras = response['end_time']
             var concut_oras = response['start_time'] + '-' + response['end_time'];
             var date = response['startDate'] ;
 
-        //     var today1 = new Date();
-        //     console.log(today1);
-        //     var texts = "POWP";
-            // var aad = response['permit_number'][0].division;
-        //     var ax = "001";
-        //     var date1 = texts+'-'+aad+'-'+today1.getFullYear().toString().slice(-2)+''+(today1.getMonth()+1)+'-'+ax;
-
-        // console.log(date1);
-        // console.log(response['worker'][0].name);
-        // console.log(response['resulta']);
-        // console.log(response['approver'][0].permit_number);
-        // console.log((response['permit_number'][0]));
-
-            // let workpermit = response['permit_number'];
-// console.log(permit_number[0].contractor_id.company);
-            // if (workpermit.length > 0) {
-                // $("#txtpermitNumberID").val(response['permit_number'][0].permit_number);
-                // $("#txtClassificatiodID").val(response['permit_number'][0].classification);
-                // $("#txtWorkPermitTypeID").val(response['permit_number'][0].work_permit_type);
                 $("#editTxtPersonInChargeID").val(response['permit_number'][0].person_in_charge);
                 $("#editTxtActivityID").val(response['permit_number'][0].activity);
                 $("#editSelContractorID").val(response['permit_number'][0]['contractor_id']['id']).trigger("change");
                 // $("#editContractorPersonInChargeID").val(response['permit_number'][0]['id'].trigger("change"));
                 // $("#editContractorPersonInChargeID").val(response['permit_number'][0]['contractor_person_in_charge']['name'].trigger("change"));
                 // $("#editContractorSafetyOfficerInChargeID").val(response['permit_number'][0]['contractor_safety_officer_in_charge']['name'].trigger("change"));
+
                 $("#editTxtPersonInChargeDepartmentID").val(response['permit_number'][0].department);
                 $("#editTxtLocalnumberID").val(response['permit_number'][0].local_number).trigger("change");
                 $("#editTxtLocationID").val(response['permit_number'][0].location);
@@ -369,7 +342,8 @@ function GetWorkPermitIdToEdit(workpermitID) {
                 $("#txtToolQuantityID").val(response['tools'][0].quantity);
                 $("#editTxtTools").val(response['tools'][0].other_requirements);
                 $("#txtAffectedSafetyDevicesID").val(response['tools'][0].affected_safety_devices);
-                $("#editTxtAddProjectInCharge").val(response['approver'][0].project_in_charge);
+                $("#editTxtAddProjectInCharge").val(response['permit_number'][0]['person_in_charge']);
+
                 $("#editSelectSafetyofficerInCharge").val(response['approver'][0]['safety_officer_in_charge']['id']).trigger("change");
                 $("#editSelectEmsManager").val(response['approver'][0]['ems_manager']['id']).trigger("change");
                 $("#editSelectOverAllSafetyOfficer").val(response['approver'][0]['over_all_safety_officer']['id']).trigger("change");
@@ -711,7 +685,7 @@ function GetOverAllSafetyOfficer(cboElement){
 }
 
 function GetHrdManager(cboElement){
-    let result = '<option value="0" selected disabled> -- Section HRD Manager -- </option>';
+    let result = '<option value="0" selected disabled> -- Section HR / Administration -- </option>';
     $.ajax({
         url: 'get_hrd_manager',
         method: 'get',
@@ -724,7 +698,7 @@ function GetHrdManager(cboElement){
             result = '';
 
             if(response['user_approvers'].length > 0){
-                result = '<option value="0" selected disabled> -- HRD Manager -- </option>';
+                result = '<option value="0" selected disabled> -- HR / Administration -- </option>';
                 for(let index = 0; index < response['user_approvers'].length; index++){
                     result += '<option value="' + response['user_approvers'][index].rapidx_id + '">' + response['user_approvers'][index].rapidx_user_details.name + '</option>';
                 }
@@ -738,7 +712,7 @@ function GetHrdManager(cboElement){
 }
 
 function GetEmsManager(cboElement){
-    let result = '<option value="0" selected disabled> -- Section EMS Manager -- </option>';
+    let result = '<option value="0" selected disabled> -- Section Pollution Control Officer -- </option>';
     $.ajax({
         url: 'get_ems_manager',
         method: 'get',
@@ -751,7 +725,7 @@ function GetEmsManager(cboElement){
             result = '';
 
             if(response['user_approvers'].length > 0){
-                result = '<option value="0" selected disabled> -- EMS Manager -- </option>';
+                result = '<option value="0" selected disabled> -- Pollution Control Officer -- </option>';
                 for(let index = 0; index < response['user_approvers'].length; index++){
                     result += '<option value="' + response['user_approvers'][index].rapidx_id + '">' + response['user_approvers'][index].rapidx_user_details.name + '</option>';
                 }
